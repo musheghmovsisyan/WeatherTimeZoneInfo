@@ -1,0 +1,34 @@
+[
+  {
+    "outputFileName": "wwwroot/js/TimeZone.min.js",
+    "inputFiles": [
+      "wwwroot/js/TimeZone.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "~/js/site.min.js",
+    "inputFiles": [
+      "~/js/site.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  }
+
+
+]

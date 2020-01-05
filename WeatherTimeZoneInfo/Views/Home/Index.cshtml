@@ -1,0 +1,46 @@
+﻿@{
+
+}
+
+<div class="text-center">
+    <div>@WeatherTimeZoneInfo.Resources.LabelsTxt.Welcome</div>
+    <div>@WeatherTimeZoneInfo.Resources.LabelsTxt.EnterZIPCode</div>
+
+
+</div>
+
+<div class="container TopSpace">
+
+    <label>@WeatherTimeZoneInfo.Resources.LabelsTxt.ZIPCode</label>
+    <input type="text" id="ZipValue" name="ZipValue" class="only-numeric" placeholder="@WeatherTimeZoneInfo.Resources.LabelsTxt.OnlyNumbers" >
+    <input id="btGetInfo" type="button" value="@WeatherTimeZoneInfo.Resources.LabelsTxt.GetInfo" style=" display: none" default />
+
+    <span class="error" style="color: red; display: none">* Input digits (0 - 9)</span>
+
+</div>
+
+<div id="ResultViewPanel" class="container TopSpace BottomSpace"></div>
+@section scripts {
+    <script src="~/js/TimeZone.min.js" asp-append-version="true"></script>
+
+
+    <script>
+    
+
+
+        document.getElementById('btGetInfo').addEventListener('click', () => {
+             var ZipCode = document.getElementById("ZipValue").value;
+            fetch("zipcode/info?ZipCode=" + ZipCode)
+                .then((response) => {
+                    return response.text();
+                })
+                .then((result) => {
+                    document.getElementById('ResultViewPanel').innerHTML = result;
+                });
+        });
+
+
+
+    </script>
+
+}
